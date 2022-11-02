@@ -1,0 +1,6 @@
+{
+    "gravitysci.init|block": "[OBJ]初始化直到成功 ID:[ADDR]",
+    "gravitysci.getValue|block": "[OBJ]获取[KEY]数据",
+    "gravitysci.LANG.en|menu": "英语",
+    "gravitysci.LANG.zh|menu": "中文"
+}

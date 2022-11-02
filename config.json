@@ -1,0 +1,32 @@
+{
+	"name": {
+		"zh-cn": "Gravity SCI 采集模块",
+		"en": "Gravity SCI"
+	},
+	"description": {
+		"zh-cn": "SKU:DFR0999 SCI采集模块是一款多功能数据采集模块，可连接多种传感器，自动识别统一数据输出。",
+		"en": "SKU:DFR0999 Gravity SCI"
+	},
+	"author": "liliang",
+	"email": "969316753@qq.com",
+	"license": "MIT",
+	"isBoard": false,
+	"id": "gravitysci",
+	"platform": ["win", "mac", "web"],
+	"version": "0.0.1",
+	"asset": {
+		"arduinoC": {
+			"dir": "arduinoC/",
+			"version": "0.0.1",
+			"board": ["esp32","arduino","arduinonano","leonardo","mega2560","maqueen","telloesp32","firebeetleesp32","firebeetleesp32e"],
+			"main": "main.ts"
+		},
+		"python": {
+			"dir": "python/",
+			"version": "0.0.1",
+			"main": "main.ts",
+			"dependencies": {
+			}
+		  }
+	}
+}
