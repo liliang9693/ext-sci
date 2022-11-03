@@ -18,14 +18,32 @@ namespace gravitysci {
     }
    
     
-    //% block="[OBJ] get [KEY] value" blockType="reporter"
+    //% block="[OBJ] get [KEY] [VOU]" blockType="reporter"
     //% OBJ.shadow="normal" OBJ.defl="SCI1"
     //% KEY.shadow="string" KEY.defl="Light" 
-    export function getValue(parameter: any, block: any) {
+    //% VOU.shadow="dropdown" VOU.options="VOU" 
+    export function getKeyValueOrUnit(parameter: any, block: any) {
         let obj=parameter.OBJ.code;
         let key=parameter.KEY.code;
+        let vou=parameter.VOU.code;
         obj=obj.replace(/"/g,"") //去引号
-        Generator.addCode(`${obj}.getValue(${key})`);
+        Generator.addCode(`${obj}.get${vou}(${key})`);
+ 
+    }
+
+    //% block="[OBJ] get port[PORT] [KEY] [VOU]" blockType="reporter"
+    //% OBJ.shadow="normal" OBJ.defl="SCI1" 
+    //% PORT.shadow="dropdown" PORT.options="PORT" 
+    //% KEY.shadow="string" KEY.defl="Light" 
+    //% VOU.shadow="dropdown" VOU.options="VOU" 
+    export function getPortKeyValue(parameter: any, block: any) {
+        let obj=parameter.OBJ.code;
+        let port=parameter.PORT.code;
+        let key=parameter.KEY.code;
+        let vou=parameter.VOU.code;
+        obj=obj.replace(/"/g,"") //去引号
+
+        Generator.addCode(`${obj}.get${vou}(${obj}.${port},${key})`);
  
     }
 

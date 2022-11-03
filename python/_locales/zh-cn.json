@@ -1,7 +1,11 @@
 {
     "gravitysci.init|block": "[OBJ]初始化直到成功 ID:[ADDR]",
-    "gravitysci.getValue|block": "[OBJ]获取[KEY]数据",
-    "gravitysci.LANG.en|menu": "英语",
-    "gravitysci.LANG.zh|menu": "中文"
+    "gravitysci.getKeyValueOrUnit|block": "[OBJ] 获取[KEY] [VOU]",
+    "gravitysci.getPortKeyValue|block": "[OBJ] 获取接口[PORT] [KEY] [VOU]",
+    "gravitysci.VOU.value|menu": "数值",
+    "gravitysci.VOU.unit|menu": "单位",
+    "gravitysci.PORT.AD|menu": "A&D",
+    "gravitysci.PORT.I2C_UART1|menu": "I2C1&UART1",
+    "gravitysci.PORT.I2C_UART2|menu": "I2C2&UART2"
 
 }
