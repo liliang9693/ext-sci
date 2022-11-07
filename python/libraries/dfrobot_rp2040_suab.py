@@ -21,7 +21,10 @@
   @author [Arya](xue.peng@dfrobot.com)
   @version  V1.0
   @date  2022-07-20
-  @url https://github.com/DFRobot/DFRobot_RP2040_SUAB
+  @ ---------------------------------------------------------
+  @date 20221101
+  @此代码在原RaspberryPi的代码上调整了i2c读取方式，仅适配行空板(DFR0706)使用
+  @url https://gitee.com/liliang9693/ext-sci
 '''
 import sys
 #import smbus

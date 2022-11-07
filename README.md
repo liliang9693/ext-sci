@@ -28,15 +28,52 @@ SKU:DFR0999 SCI采集模块是一款多功能数据采集模块，可连接多�
 
 ## Blocks
 
-![](./arduinoC/_images/blocks.png)
+![](./python/_images/blocks.png)
 
 
 
 ## Examples
-
+### 上传模式
 ![](./arduinoC/_images/example.png)  
+### Python模式行空板
+#### 图形化方式：
+注意先要将行空板上的pinpong库版本升级到最新版本，升级方法：```https://wiki.unihiker.com/pip_install```  
 ![](./python/_images/example.png)  
+#### 代码方式：
 
+```python
+#  -*- coding: UTF-8 -*-
+
+# MindPlus
+# Python
+# 此代码将SCI模块连接行空板，可以读取SCI模块上连接的光线传感器的数据
+# 注意1：需要将https://gitee.com/liliang9693/ext-scl仓库中dfrobot_rp2040_suab.py库文件与本代码一起运行
+# 注意2：需要将行空板上的pinpong库版本升级到0.4.9及以上版本，升级方法：https://wiki.unihiker.com/pip_install
+from dfrobot_rp2040_suab import *
+from pinpong.board import Board
+import time
+
+
+Board().begin()
+SCI1 = DFRobot_SUAB_IIC(addr=0x21) #SCI屏幕左上角ID显示的地址
+while SCI1.begin() != 0:
+    print("Initialization Sensor Universal Adapter Board failed.")
+    time.sleep(1)
+print("Initialization Sensor Universal Adapter Board done.")
+
+while True:
+    print(SCI1.get_value0("Light"))
+    print(SCI1.get_unit0("Light"))
+    print(SCI1.get_value1(SCI1.eAD,"Light"))
+    print(SCI1.get_unit1(SCI1.eAD,"Light"))
+    print(SCI1.get_value1(SCI1.eAD,"Light"))
+    print(SCI1.get_unit1(SCI1.eAD,"Light"))
+    print(SCI1.get_value1(SCI1.eAD,"Light"))
+    print(SCI1.get_unit1(SCI1.eAD,"Light"))
+    print("----------------")
+    time.sleep(1)
+
+```
 ## License
 
 MIT
