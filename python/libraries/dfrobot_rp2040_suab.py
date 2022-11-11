@@ -823,7 +823,7 @@ class DFRobot_SUAB:
       if length:
         for data in recv_pkt[self.INDEX_RES_DATA:]:
           rslt += chr(data)
-        rslt += '\0'
+        #rslt += '\0'
     return rslt
 
   def get_sku(self, inf):
@@ -852,7 +852,7 @@ class DFRobot_SUAB:
       if length:
         for data in recv_pkt[self.INDEX_RES_DATA:]:
           rslt += chr(data)
-        rslt += '\0'
+        #rslt += '\0'
     return rslt
 
   def get_keys(self, inf):
@@ -881,7 +881,7 @@ class DFRobot_SUAB:
       if length:
         for data in recv_pkt[self.INDEX_RES_DATA:]:
           rslt += chr(data)
-        rslt += '\0'
+        #rslt += '\0'
     return rslt
 
   def get_values(self, inf):
@@ -910,7 +910,7 @@ class DFRobot_SUAB:
       if length:
         for data in recv_pkt[self.INDEX_RES_DATA:]:
           rslt += chr(data)
-        rslt += '\0'
+        #rslt += '\0'
     return rslt
 
   def get_units(self, inf):
@@ -939,7 +939,7 @@ class DFRobot_SUAB:
       if length:
         for data in recv_pkt[self.INDEX_RES_DATA:]:
           rslt += chr(data)
-        rslt += '\0'
+        #rslt += '\0'
     return rslt
 
   def get_value0(self, keys):
@@ -967,7 +967,7 @@ class DFRobot_SUAB:
       if length:
         for data in recv_pkt[self.INDEX_RES_DATA:]:
           rslt += chr(data)
-        rslt += '\0'
+        #rslt += '\0'
     return rslt
 
   def get_value1(self, inf, keys):
@@ -1003,7 +1003,7 @@ class DFRobot_SUAB:
       if length:
         for data in recv_pkt[self.INDEX_RES_DATA:]:
           rslt += chr(data)
-        rslt += '\0'
+        #rslt += '\0'
     return rslt
 
   def get_value2(self, inf, sku, keys):
@@ -1043,7 +1043,7 @@ class DFRobot_SUAB:
       if length:
         for data in recv_pkt[self.INDEX_RES_DATA:]:
           rslt += chr(data)
-        rslt += '\0'
+        #rslt += '\0'
     return rslt
 
   def get_unit0(self, keys):
@@ -1073,7 +1073,7 @@ class DFRobot_SUAB:
       if length:
         for data in recv_pkt[self.INDEX_RES_DATA:]:
           rslt += chr(data)
-        rslt += '\0'
+        #rslt += '\0'
     return rslt
 
   def get_unit1(self, inf, keys):
@@ -1109,7 +1109,7 @@ class DFRobot_SUAB:
       if length:
         for data in recv_pkt[self.INDEX_RES_DATA:]:
           rslt += chr(data)
-        rslt += '\0'
+        #rslt += '\0'
     return rslt
 
   def get_unit2(self, inf, sku, keys):
@@ -1149,7 +1149,7 @@ class DFRobot_SUAB:
       if length:
         for data in recv_pkt[self.INDEX_RES_DATA:]:
           rslt += chr(data)
-        rslt += '\0'
+        #rslt += '\0'
     return rslt
 
   def get_analog_sensor_sku(self):
@@ -1171,7 +1171,7 @@ class DFRobot_SUAB:
       if length:
         for data in recv_pkt[self.INDEX_RES_DATA:]:
           rslt += chr(data)
-        rslt += '\0'
+        #rslt += '\0'
     return rslt
   
   def get_digital_sensor_sku(self):
@@ -1193,10 +1193,10 @@ class DFRobot_SUAB:
       if length:
         for data in recv_pkt[self.INDEX_RES_DATA:]:
           rslt += chr(data)
-        rslt += '\0'
+        #rslt += '\0'
     return rslt
 
-  def get_i2c_sensor_sku(self):
+  def get_i2c_sensor_sku(self):#rslt += '\0'
     '''!
       @brief 获取传感器通用适配器板(Sensor Universal Adapter Board)I2C系列传感器的SKU支持列表
       @return 传感器通用适配器板(Sensor Universal Adapter Board)I2C系列传感器的SKU支持列表，如果没有则返回NULL
@@ -1215,7 +1215,7 @@ class DFRobot_SUAB:
       if length:
         for data in recv_pkt[self.INDEX_RES_DATA:]:
           rslt += chr(data)
-        rslt += '\0'
+        #rslt += '\0'
     return rslt
 
   def get_uart_sensor_sku(self):
@@ -1237,7 +1237,7 @@ class DFRobot_SUAB:
       if length:
         for data in recv_pkt[self.INDEX_RES_DATA:]:
           rslt += chr(data)
-        rslt += '\0'
+        #rslt += '\0'
     return rslt
 
   def _recv_packet(self, cmd):
