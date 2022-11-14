@@ -98,5 +98,18 @@
 			["0x22","0x22"],
 			["0x23","0x23"]
 		]
+	},
+	"VOU":{
+		"menu":[
+			["value","Value"],
+			["unit","Unit"]
+		]
+	},
+	"PORT":{
+		"menu":[
+			["AD","eAD"],
+			["I2C_UART1","eI2C_UART1"],
+			["I2C_UART2","eI2C_UART2"]
+		]
 	}
 }
