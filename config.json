@@ -13,17 +13,17 @@
 	"isBoard": false,
 	"id": "gravitysci",
 	"platform": ["win", "mac", "web"],
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"asset": {
 		"arduinoC": {
 			"dir": "arduinoC/",
-			"version": "0.0.2",
+			"version": "0.0.3",
 			"board": ["microbit","esp32","arduino","arduinonano","leonardo","mega2560","maqueen","telloesp32","firebeetleesp32","firebeetleesp32e"],
 			"main": "main.ts"
 		},
 		"python": {
 			"dir": "python/",
-			"version": "0.0.2",
+			"version": "0.0.3",
 			"main": "main.ts",
 			"dependencies": {
 			}

@@ -11,8 +11,8 @@ namespace gravitysci {
         console.log(obj)
         obj=obj.replace(/"/g,"") //去引号
         console.log(obj)
-        Generator.addInclude("rp2040lib", `#include "DFRobot_RP2040_SUAB.h"`);
-        Generator.addObject(`rp2040obj`, `DFRobot_RP2040_SUAB_IIC`, `${obj}(/*addr=*/${addr}, &Wire);`);
+        Generator.addInclude("rp2040lib", `#include "DFRobot_RP2040_SCI.h"`);
+        Generator.addObject(`rp2040obj${obj}`, `DFRobot_RP2040_SCI_IIC`, `${obj}(/*addr=*/${addr}, &Wire);`);
         Generator.addCode([`while(${obj}.begin() != 0){delay(1000);}`, Generator.ORDER_UNARY_POSTFIX]);
  
     }
@@ -47,6 +47,25 @@ namespace gravitysci {
  
     }
 
+    //% block="[OBJ] get firmware version" blockType="reporter"
+    //% OBJ.shadow="normal" OBJ.defl="SCI1" 
+    export function getVersion(parameter: any, block: any) {
+        let obj=parameter.OBJ.code;
+        obj=obj.replace(/"/g,"") //去引号
+
+        Generator.addCode(`${obj}.getVersionDescription(${obj}.getVersion())`);
+        
+    }
+
+    //% block="[OBJ] get time stamp" blockType="reporter"
+    //% OBJ.shadow="normal" OBJ.defl="SCI1" 
+    export function getTimeStamp(parameter: any, block: any) {
+        let obj=parameter.OBJ.code;
+        obj=obj.replace(/"/g,"") //去引号
+
+        Generator.addCode(`${obj}.getTimeStamp()`);
+        
+    }
 
  
 }

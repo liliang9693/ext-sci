@@ -9,9 +9,9 @@ namespace gravitysci {
         let obj=parameter.OBJ.code;
         let addr=parameter.ADDR.code;
         console.log(obj)
-        Generator.addImport("from dfrobot_rp2040_suab import *");
+        Generator.addImport("from dfrobot_rp2040_sci import *");
         Generator.addImport("import time");
-        Generator.addCode(`${obj} = DFRobot_SUAB_IIC(addr=${addr})
+        Generator.addCode(`${obj} = DFRobot_RP2040_SCI_IIC(addr=${addr})
 while ${obj}.begin() != 0:
     print("Initialization Sensor Universal Adapter Board failed.")
     time.sleep(1)
@@ -52,6 +52,25 @@ print("Initialization Sensor Universal Adapter Board done.")`);
     }
 
     
+    //% block="[OBJ] get firmware version" blockType="reporter"
+    //% OBJ.shadow="normal" OBJ.defl="SCI1" 
+    export function getVersion(parameter: any, block: any) {
+        let obj=parameter.OBJ.code;
+        obj=obj.replace(/"/g,"") //去引号
+
+        Generator.addCode(`${obj}.get_version_description(${obj}.get_version())`);
+        
+    }
+
+    //% block="[OBJ] get time stamp" blockType="reporter"
+    //% OBJ.shadow="normal" OBJ.defl="SCI1" 
+    export function getTimeStamp(parameter: any, block: any) {
+        let obj=parameter.OBJ.code;
+        obj=obj.replace(/"/g,"") //去引号
+
+        Generator.addCode(`${obj}.get_timestamp()`);
+        
+    }
 
    
 
