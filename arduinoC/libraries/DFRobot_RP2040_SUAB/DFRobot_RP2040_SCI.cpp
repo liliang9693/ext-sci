@@ -1408,7 +1408,13 @@ int DFRobot_RP2040_SCI_IIC::recvData(void *data, int len){
 #else
     if(remain) _pWire->requestFrom(_addr, len, false);
 #endif
-    else _pWire->requestFrom(_addr, len, true);
+    else {
+      #if defined(NRF5) || defined(NRF52833)
+        _pWire->requestFrom(_addr, len, false);
+      #else
+        _pWire->requestFrom(_addr, len, true);
+      #endif
+    }
     for(int i = 0; i < len; i++){
       pBuf[i] = _pWire->read();
       RP2040_SUAB_DBG(pBuf[i],HEX);

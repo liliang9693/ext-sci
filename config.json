@@ -13,11 +13,11 @@
 	"isBoard": false,
 	"id": "gravitysci",
 	"platform": ["win", "mac", "web"],
-	"version": "0.0.5",
+	"version": "0.0.6",
 	"asset": {
 		"arduinoC": {
 			"dir": "arduinoC/",
-			"version": "0.0.3",
+			"version": "0.0.4",
 			"board": ["microbit","esp32","arduino","arduinonano","leonardo","mega2560","maqueen","telloesp32","firebeetleesp32","firebeetleesp32e"],
 			"main": "main.ts"
 		},
