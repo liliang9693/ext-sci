@@ -972,8 +972,18 @@ class DFRobot_SCI:
       if length:
         for data in recv_pkt[self.INDEX_RES_DATA:]:
           rslt += chr(data)
+    else:
+      rslt = "0"
     return rslt
 
+  def get_valueFloat0(self, keys):
+    tempval=0
+    try:
+      tempval=float(self.get_value0(keys))
+    except Exception as e:
+      print(e)
+    return tempval
+    
   def get_value1(self, inf, keys):
     '''!
       @brief 获取指定接口所连接的传感器中属性名称为 keys 的数据值，多个属性值之间用','号隔开
@@ -1007,8 +1017,18 @@ class DFRobot_SCI:
       if length:
         for data in recv_pkt[self.INDEX_RES_DATA:]:
           rslt += chr(data)
+    else:
+      rslt = "0"
     return rslt
-
+  
+  def get_valueFloat1(self, inf, keys):
+    tempval=0
+    try:
+      tempval=float(self.get_value1(inf, keys))
+    except Exception as e:
+      print(e)
+    return tempval
+  
   def get_value2(self, inf, sku, keys):
     '''!
       @brief 获取指定接口所连接的传感器中SKU为sku的传感器中属性名称为 keys 的数据值，多个属性值之间用','号隔开
@@ -1075,6 +1095,8 @@ class DFRobot_SCI:
       if length:
         for data in recv_pkt[self.INDEX_RES_DATA:]:
           rslt += chr(data)
+    else:
+      rslt = "None"
     return rslt
 
   def get_unit1(self, inf, keys):
@@ -1110,6 +1132,8 @@ class DFRobot_SCI:
       if length:
         for data in recv_pkt[self.INDEX_RES_DATA:]:
           rslt += chr(data)
+    else:
+      rslt = "None"
     return rslt
 
   def get_unit2(self, inf, sku, keys):

@@ -9,7 +9,8 @@
 	"VOU":{
 		"menu":[
 			["value","value"],
-			["unit","unit"]
+			["unit","unit"],
+			["valueFloat","valueFloat"]
 		]
 	},
 	"PORT":{

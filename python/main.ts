@@ -28,9 +28,10 @@ print("Initialization Sensor Universal Adapter Board done.")`);
         let obj=parameter.OBJ.code;
         let key=parameter.KEY.code;
         let vou=parameter.VOU.code;
-        console.log(obj)
 
         Generator.addCode(`${obj}.get_${vou}0(${key})`);
+
+        
  
     }
 
@@ -45,10 +46,10 @@ print("Initialization Sensor Universal Adapter Board done.")`);
         let port=parameter.PORT.code;
         let key=parameter.KEY.code;
         let vou=parameter.VOU.code;
-        console.log(obj)
 
         Generator.addCode(`${obj}.get_${vou}1(${obj}.${port},${key})`);
- 
+
+        
     }
 
     
