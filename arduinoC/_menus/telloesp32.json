@@ -84,5 +84,11 @@
 			["Port2","ePort2"],
 			["Port3","ePort3"]
 		]
+	},
+	"SWITCH":{
+		"menu":[
+			["ON","ON"],
+			["OFF","OFF"]
+		]
 	}
 }

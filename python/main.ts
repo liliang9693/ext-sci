@@ -18,7 +18,10 @@ while ${obj}.begin() != 0:
 print("Initialization Sensor Universal Adapter Board done.")`);
  
     }
-   
+       //% block="---"
+       export function noteSep2() {
+
+       }
     
     //% block="[OBJ] get [KEY] [VOU]" blockType="reporter"
     //% OBJ.shadow="normal" OBJ.defl="SCI1" 
@@ -73,6 +76,29 @@ print("Initialization Sensor Universal Adapter Board done.")`);
         
     }
 
+    //% block="---"
+    export function noteSep1() {
+
+    }
+    //% block="[OBJ] set record [SWITCH]" blockType="command"
+    //% OBJ.shadow="normal" OBJ.defl="SCI1" 
+    //% SWITCH.shadow="dropdown" SWITCH.options="SWITCH" 
+    export function setRecord(parameter: any, block: any) {
+        let obj=parameter.OBJ.code;
+        let sw=parameter.SWITCH.code;
+
+        obj=obj.replace(/"/g,"") //去引号
+
+        if(sw=="ON"){
+            Generator.addCode(`${obj}.enable_record()`);
+        }else if(sw=="OFF"){
+            Generator.addCode(`${obj}.disable_record()`);
+        }
+        
+        
+    }
+
+  
    
 
 }

@@ -4,11 +4,14 @@
     "gravitysci.getPortKeyValue|block": "[OBJ] 获取接口[PORT] [KEY] [VOU]",
     "gravitysci.getVersion|block": "[OBJ] 获取固件版本号",
     "gravitysci.getTimeStamp|block": "[OBJ] 获取最新数据的刷新时间",
+    "gravitysci.setRecord|block": "[OBJ][SWITCH]数据存储功能",
     "gravitysci.VOU.value|menu": "数值",
     "gravitysci.VOU.unit|menu": "单位",
     "gravitysci.PORT.ALL|menu": "全部",
     "gravitysci.PORT.Port1|menu": "Port1",
     "gravitysci.PORT.Port2|menu": "Port2",
-    "gravitysci.PORT.Port3|menu": "Port3"
+    "gravitysci.PORT.Port3|menu": "Port3",
+    "gravitysci.SWITCH.ON|menu": "启动",
+    "gravitysci.SWITCH.OFF|menu": "停止"
 
 }

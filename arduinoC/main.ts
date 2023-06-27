@@ -17,6 +17,10 @@ namespace gravitysci {
  
     }
    
+    //% block="---"
+    export function noteSep2() {
+
+    }
     
     //% block="[OBJ] get [KEY] [VOU]" blockType="reporter"
     //% OBJ.shadow="normal" OBJ.defl="SCI1"
@@ -64,6 +68,28 @@ namespace gravitysci {
         obj=obj.replace(/"/g,"") //去引号
 
         Generator.addCode(`${obj}.getTimeStamp()`);
+        
+    }
+
+    //% block="---"
+    export function noteSep1() {
+
+    }
+    //% block="[OBJ] set record [SWITCH]" blockType="command"
+    //% OBJ.shadow="normal" OBJ.defl="SCI1" 
+    //% SWITCH.shadow="dropdown" SWITCH.options="SWITCH" 
+    export function setRecord(parameter: any, block: any) {
+        let obj=parameter.OBJ.code;
+        let sw=parameter.SWITCH.code;
+
+        obj=obj.replace(/"/g,"") //去引号
+
+        if(sw=="ON"){
+            Generator.addCode(`${obj}.enableRecord();`);
+        }else if(sw=="OFF"){
+            Generator.addCode(`${obj}.disableRecord();`);
+        }
+        
         
     }
 
