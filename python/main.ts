@@ -9,7 +9,7 @@ namespace gravitysci {
         let obj=parameter.OBJ.code;
         let addr=parameter.ADDR.code;
         console.log(obj)
-        Generator.addImport("from dfrobot_rp2040_sci import *");
+        Generator.addImport(`import sys\nsys.path.append("/root/mindplus/.lib/thirdExtension/liliang-gravitysci-thirdex")\nfrom dfrobot_rp2040_sci import *`);
         Generator.addImport("import time");
         Generator.addCode(`${obj} = DFRobot_RP2040_SCI_IIC(addr=${addr})
 while ${obj}.begin() != 0:
